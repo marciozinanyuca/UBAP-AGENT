@@ -1,0 +1,223 @@
+===============================================================================
+     MANUAL OPERATIVO Y ACUERDO DE NIVELES DE SERVICIO - SG-UBAP
+           Versión 1.0 - Actualizada en Junio de 2026
+===============================================================================
+
+1. INTRODUCCIÓN Y CULTURA DE SERVICIO DE UBAP
+-------------------------------------------------------------------------------
+Bienvenido al Manual Operativo del Sistema de Gestión de la Unidad Básica de 
+Atención Primaria (SG-UBAP). Las Unidades Básicas de Atención Primaria (UBAP) 
+constituyen el modelo de atención primaria ambulatoria implementado por el 
+Seguro Social de Salud (EsSalud), orientado a fortalecer el primer nivel de 
+atención para sus asegurados.
+
+Nuestra misión es brindar prestaciones de salud integrales de atención primaria, 
+preventivos, promocionales, recuperativos y de rehabilitación básica, con 
+calidad, calidez y accesibilidad para mejorar el bienestar de los asegurados. 
+Nuestra visión es ser un modelo de atención primaria de salud líder, moderno, 
+en mejora continua y descentralizado, enfocado en los asegurados, que garantice 
+el acceso a la seguridad social en salud con ética, oportunidad y calidad.
+
+El presente documento regula el uso del ecosistema web desarrollado para 
+optimizar la programación de citas, mitigar los prolongados tiempos de espera 
+y erradicar las ineficiencias de los procesos administrativos manuales 
+tradicionales.
+
+
+2. JORNADA DE TRABAJO Y LOGÍSTICA DEL REGISTRO DE ASISTENCIA
+-------------------------------------------------------------------------------
+El sistema SG-UBAP está parametrizado para responder a los flujos operativos 
+y de soporte técnico del personal de salud y administrativo:
+
+* Horario de Soporte Técnico Estándar: El equipo de soporte técnico operará 
+  activamente de lunes a viernes de 09:00 a 17:00 para la resolución de 
+  incidencias en la plataforma.
+* Atención Fuera de Horario: Las incidencias o solicitudes que se registren 
+  fuera del horario establecido o durante los fines de semana serán atendidas 
+  el siguiente día hábil.
+* Gestión Médica Semanal: Los médicos tienen la obligación de visualizar su 
+  horario semanal y citas programadas para organizar eficientemente sus 
+  atenciones, quedando restringida su actividad únicamente a la sede física 
+  asignada de manera contractual para evitar desplazamientos innecesarios 
+  entre locales.
+
+
+3. MODELO OPERATIVO Y DISPONIBILIDAD LOGÍSTICA (MULTI-SEDE)
+-------------------------------------------------------------------------------
+El sistema SG-UBAP ha sido estructurado para soportar un modelo operativo 
+híbrido-arquitectónico en red, caracterizado por una gestión descentralizada 
+y con autonomía local, pero bajo un estricto aislamiento de datos para 
+preservar la privacidad y la seguridad de la información:
+
+* Esquema Multi-sede (Multi-tenant Lógico): El sistema gestiona múltiples sedes 
+  operativas de forma simultánea e independiente (ej. Sede San Isidro, Sede 
+  Miraflores, Sede Surco), centralizando el control global a nivel de 
+  administrador.
+* Aislamiento de Datos por Sede: Mediante un middleware de autorización 
+  avanzado, se restringe rigurosamente el acceso a la información médica de 
+  forma que un usuario (paciente, médico o administrador local) pertenezca y 
+  visualice únicamente los datos de su sede asignada.
+* Infraestructura de Equipamiento: El acceso al software se realiza en un 
+  entorno puramente web, lo que exige por parte de los clientes y del personal 
+  de salud la disponibilidad de una conexión a internet estable y un navegador 
+  compatible para interactuar con los módulos en tiempo real.
+
+
+4. POLÍTICA DE GESTIÓN DE CITAS Y ATENCIONES MÉDICAS
+-------------------------------------------------------------------------------
+El núcleo operativo de la UBAP se rige por un estricto control automatizado 
+de la disponibilidad médica:
+
+* Proceso de Agendamiento: Los pacientes asegurados pueden autogestionar y 
+  agendar sus citas en tiempo real seleccionando la sede, la especialidad 
+  médica (ej. Cardiología, Pediatría, Neurología, Dermatología, Ginecología, 
+  Oftalmología, Traumatología o Medicina General), el médico disponible, la 
+  fecha y el horario idóneo.
+* Restricción de Disponibilidad: El sistema valida de forma inteligente los 
+  bloques de tiempo para evitar conflictos, duplicidades de citas y 
+  solapamientos de horarios en la agenda de un mismo profesional.
+* Cancelación de Citas: El paciente tiene la facultad de cancelar su cita antes 
+  de la fecha programada en caso de presentarse motivos de fuerza mayor, 
+  liberando inmediatamente el cupo para optimizar la eficiencia operativa.
+* Historial Clínico Longitudinal: Durante el acto médico, el personal de salud 
+  cuenta con acceso instantáneo al historial clínico básico del paciente para 
+  asegurar una atención contigua, segura y personalizada.
+* Registro de la Atención: El médico está obligado a registrar el diagnóstico 
+  clínico de la consulta y adjuntar la documentación correspondiente (recetas 
+  médicas y derivaciones a establecimientos de mayor complejidad).
+
+
+5. ACUERDO DE NIVELES DE SERVICIO (SLA)
+-------------------------------------------------------------------------------
+Este Acuerdo de Nivel de Servicio (SLA) se celebra entre el Equipo de 
+Desarrollo de SG-UBAP (Proveedor del Servicio) y EsSalud junto con los usuarios 
+del sistema (Clientes), definiendo los parámetros de calidad esperados.
+
+5.1. Matriz de Niveles de Soporte ante Incidentes
++-----------+---------------------------------------+--------------------------+
+| Prioridad | Descripción del Incidente             | Plazo Máximo Resolución  |
++-----------+---------------------------------------+--------------------------+
+| Alta      | Incidentes críticos que impiden la    | Máximo 8 horas           |
+|           | operación total del sistema.          |                          |
++-----------+---------------------------------------+--------------------------+
+| Media     | Fallos parciales en módulos no        | Máximo 48 horas          |
+|           | críticos (ej. errores de dashboard).  |                          |
++-----------+---------------------------------------+--------------------------+
+| Baja      | Consultas generales, dudas estéticas  | Hasta 5 días hábiles     |
+|           | o solicitudes de nuevas funciones.    |                          |
++-----------+---------------------------------------+--------------------------+
+
+Nota: El mantenimiento programado del sistema será comunicado previamente al 
+cliente para evitar la afectación de los servicios.
+
+5.2. Catálogo de Servicios Técnicos Regulados
++----+-----------------------+----------------------------+-----------+-----------+
+| N° | Servicio              | Descripción Operativa      | Usuarios  | Prioridad |
++----+-----------------------+----------------------------+-----------+-----------+
+| 1  | Gestión de citas      | Agendar, cancelar y        | Pacientes | Alta      |
+|    | médicas               | consultar en tiempo real.  |           |           |
++----+-----------------------+----------------------------+-----------+-----------+
+| 2  | Gestión de usuarios   | Registro, inicio seguro y  | Todos los | Alta      |
+|    |                       | administración de cuentas. | Roles     |           |
++----+-----------------------+----------------------------+-----------+-----------+
+| 3  | Historial clínico     | Consulta interactiva de la | Médicos   | Alta      |
+|    |                       | información médica básica. |           |           |
++----+-----------------------+----------------------------+-----------+-----------+
+| 4  | Registro de atención  | Ingreso de diagnósticos y  | Médicos   | Alta      |
+|    | médica                | recetas/derivaciones.      |           |           |
++----+-----------------------+----------------------------+-----------+-----------+
+| 5  | Panel administrativo  | Métricas críticas mediante | Admin     | Media     |
+|    |                       | un dashboard interactivo.  |           |           |
++----+-----------------------+----------------------------+-----------+-----------+
+| 6  | Módulo de quejas      | Registro, envío y          | Pacientes | Media     |
+|    |                       | seguimiento de reclamos.   | y Admin   |           |
++----+-----------------------+----------------------------+-----------+-----------+
+| 7  | Soporte técnico       | Atención remota de fallos  | Todos los | Alta      |
+|    |                       | e incidencias del sistema. | Roles     |           |
++----+-----------------------+----------------------------+-----------+-----------+
+
+5.3. Revisión Periódica del SLA
+El presente acuerdo se someterá a una revisión formal con una frecuencia 
+Semestral (cada 6 meses) coordinada por el Document Owner (UBAP Perú), 
+garantizando la adecuación continua a las demandas del sector salud.
+
+
+6. INDICADORES CLAVE DE DESEMPEÑO (KPIS) DEL SISTEMA
+-------------------------------------------------------------------------------
+El rendimiento del sistema se auditará mensualmente mediante las siguientes 
+métricas cuantitativas fijadas como metas de calidad:
+
+* Disponibilidad del Sistema (Uptime - KPI08): Mide el tiempo que la plataforma 
+  está completamente operativa. 
+  Fórmula: (Tiempo activo / Tiempo Total) * 100. 
+  Meta: >= 98% (Mensual).
+* Tiempo Promedio de Agendamiento (KPI02): Mide el tiempo que le toma a un 
+  asegurado completar su reserva. 
+  Fórmula: Promedio en minutos por cita. 
+  Meta: <= 4 minutos (Semanal).
+* Tasa de Citas Agendadas Exitosamente (KPI01): Registra la eficiencia técnica. 
+  Fórmula: (Citas correctas / Intentos) * 100. 
+  Meta: >= 95% (Mensual).
+* Tasa de Errores del Sistema (KPI12): Controla los fallos en el software. 
+  Fórmula: (Errores / Operaciones) * 100. 
+  Meta: <= 3% (Mensual).
+* Tiempo de Respuesta a Quejas (KPI06): Tiempo de atención a los reclamos. 
+  Fórmula: Promedio en horas/días. 
+  Meta: <= 48 horas (Semanal).
+* Nivel de Satisfacción del Usuario (KPI07): Evaluación cualitativa percibida. 
+  Fórmula: Promedio de encuestas en escala 1-5. 
+  Meta: >= 4 (Mensual).
+* Registro Completo de Historias Clínicas (KPI05): Documentación generada. 
+  Fórmula: (Citas con historial / Total de citas) * 100. 
+  Meta: >= 95% (Mensual).
+
+
+7. CÓDIGO DE CONDUCTA, VALIDACIÓN Y PRIVACIDAD DE DATOS
+-------------------------------------------------------------------------------
+El uso del SG-UBAP exige el cumplimiento irrestricto de las políticas éticas:
+
+* Tolerancia Cero a Incidentes Éticos: El sistema integra un módulo transparente 
+  de quejas y sugerencias administrado por la jefatura operativa para procesar 
+  reportes, buscando elevar de forma continua la calidez del servicio público.
+* Validación de Datos en Formularios: Toda entrada de datos cuenta con 
+  validaciones mandatorias y centralizadas (frontend y backend) de campos 
+  críticos (como el DNI, nombres, correos y teléfonos) para evitar 
+  inconsistencias operativas.
+* Privacidad y Marco Legal: El tratamiento de la información clínica cumple 
+  estrictamente con las normativas de EsSalud y la Ley de Protección de Datos 
+  Personales de la República del Perú (Ley N° 29733), impidiendo fugas de 
+  información sensible.
+
+
+8. POLÍTICA DE SEGURIDAD DE LA INFORMACIÓN Y ENTORNO TÉCNICO
+-------------------------------------------------------------------------------
+Para asegurar la confidencialidad, integridad y disponibilidad de la información 
+de salud, se establecen las siguientes directrices técnicas:
+
+* Autenticación y Control de Accesos: El ingreso se realiza mediante 
+  credenciales individuales seguras, gobernadas por Spring Security y tokens 
+  JWT, aplicando un control estricto de accesos según el rol (Paciente, Médico, 
+  Administrador).
+* Encriptación de Contraseñas: Las contraseñas de todos los usuarios se 
+  almacenan en la base de datos relacional MySQL utilizando mecanismos de hashing 
+  criptográfico avanzados a través del algoritmo BCrypt, imposibilitando su 
+  lectura en texto plano.
+* Mantenibilidad y Control de Versiones: Todo cambio en el código fuente, 
+  APIs REST o esquemas de bases de datos mapeados con Hibernate/JPA debe ser 
+  gestionado exclusivamente a través de la plataforma institucional de GitHub, 
+  garantizando la trazabilidad histórica de los cambios.
+
+
+9. EVALUACIÓN, MONITOREO Y MEJORA CONTINUA (MÉTRICAS DE GESTIÓN)
+-------------------------------------------------------------------------------
+La dirección de la UBAP utilizará el sistema como una herramienta de toma de 
+decisiones estratégicas y optimización del talento:
+
+* Dashboard Administrativo: El personal con rol Administrador tiene acceso a un 
+  panel interactivo con analíticas de demanda, tasas de cumplimiento de citas 
+  (Meta: >= 90%), porcentajes de usuarios activos (Meta: >= 80%) y frecuencia 
+  de uso global.
+* Monitoreo y Mitigación de Riesgos: El administrador supervisará las alertas 
+  automáticas del sistema, controlando la tasa de cancelación de citas 
+  (Meta: <= 15%) y vigilando que no se consolide sobrecarga del personal médico 
+  o resistencia al uso de las herramientas digitales.
